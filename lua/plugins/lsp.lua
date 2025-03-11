@@ -80,6 +80,35 @@ return {
             },
           },
         },
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = {
+                unusedparams = true,
+              },
+              staticcheck = true,
+              usePlaceholders = true,
+              completeUnimported = true, -- This enables auto-import
+              matcher = "fuzzy",
+              experimentalPostfixCompletions = true,
+              gofumpt = true,
+              -- Add these formatting options:
+              formatting = {
+                gofumpt = true, -- Use gofumpt formatting rules (stricter than gofmt)
+              },
+            },
+          },
+          -- Enable format on save
+          on_attach = function(client, bufnr)
+            -- You can add other on_attach functions here
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format({ async = false })
+              end,
+            })
+          end,
+        },
         lua_ls = {
           -- enabled = false,
           single_file_support = true,
