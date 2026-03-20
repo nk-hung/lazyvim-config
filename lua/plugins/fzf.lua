@@ -114,6 +114,7 @@ return {
         },
       },
       grep = {
+        rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -g '!node_modules/' -g '!dist/'",
         actions = {
           ["alt-i"] = { actions.toggle_ignore },
           ["alt-h"] = { actions.toggle_hidden },

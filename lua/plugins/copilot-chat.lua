@@ -49,7 +49,7 @@ return {
       answer_header = "## Copilot ",
       error_header = "## Error ",
       prompts = prompts,
-      model = "claude-3.5-sonnet",
+      model = "claude-sonnet-4",
       mappings = {
         -- Use tab for completion
         complete = {
