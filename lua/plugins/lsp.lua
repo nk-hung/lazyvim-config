@@ -13,6 +13,7 @@ return {
         "typescript-language-server",
         "css-lsp",
         "gopls",
+        "jdtls",
       })
     end,
   },
@@ -35,6 +36,7 @@ return {
       inlay_hints = { enabled = false },
       ---@type lspconfig.options
       servers = {
+        vtsls = false,
         cssls = {},
         tailwindcss = {
           root_dir = function(...)
